@@ -25,7 +25,10 @@ Activate the virtual environment:  source ansible-2.9.1/bin/activate
 Install required dependencies in virtual env:
 pip install wheel
 pip install ansible==2.9.1
+(Note: if you do "pip install ansible==2.10.1", you notice that there is no stable release of version 2.10. You can see latest version in returned out us 2.10.0rc1, which means release candidate 1, so it is not stable release yet).
 Verify ansible got installed: ansible --version
 Start virtual environment:  source ansible-2.9.1/bin/activate
 To stop virtual environment: deactivate
+
+Note: You can test your code on mutliple versions of ansible by creating different virtual environments and installing a different ansible version on each.
 
