@@ -32,3 +32,51 @@ To stop virtual environment: deactivate
 
 Note: You can test your code on mutliple versions of ansible by creating different virtual environments and installing a different ansible version on each.
 
+### Important notes for Windows WSL User
+Please install sshpass
+(ansible-2.9.5) penxiao@WPU8L0042502:~$ sudo apt-get install sshpass
+
+### Visual Studio as IDE
+Install visual studio code
+After installing visual studio, install extensions:
+- ansible
+- YAML
+- remote development
+The Remote Development extension pack allows you to open any folder in a container, on a remote machine, or in the Windows Subsystem for Linux (WSL) and take advantage of VS Code's full feature set.
+
+### Visual Studio COde on Windows (WSL)
+On Visual Studio, install extenion: Remote - WSL
+The Remote - WSL extension lets you use VS Code on Windows to build Linux applications that run on the Windows Subsystem for Linux (WSL). You get all the productivity of Windows while developing with Linux-based tools, runtimes, and utilities.
+Remote - WSL lets you use VS Code in WSL just as you would from Windows.
+
+Now if you open WSL on Windows.
+Create a folder: mkdir python-test
+cd python-test/
+code . --> this command will install visual code server inside WSL and will launch visual studio code at the folder your are in.
+ 
+### Doc: VSCode Links and Extensions
+VScode Link: https://code.visualstudio.com/
+16 Unique VSCode Extensions Every Developer Should Have in 2020
+https://blog.bitsrc.io/16-unique-vscode-extensions-every-developer-should-have-in-2020-c4dcdb74506a
+
+### Prepare Network Devices/Topology
+Options:
+- Physical Devices
+- Virtual Devices
+  - GNS3
+  - CSR1000v(locally or in the cloud)
+  - Others
+ 
+ - Make  sure you can connect your devices from your laptop through SSH!
+
+### Prepare one Linux Machine
+Options:
+- Cloud Server (AWS, Azure)
+- Linux Virtual Machine Locally
+  - Vmware
+  - Virtualbox
+  - others
+
+- Make sure you can connect Linux host from your laptop through SSH!
+
+
