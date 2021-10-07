@@ -79,4 +79,10 @@ Options:
 
 - Make sure you can connect Linux host from your laptop through SSH!
 
+### Why Ansible 2.9.x?
+If you want to use open source software, do not use the latest version, because although it'll have the latest features, but the risk is that it might have some bugs. SO for version v2.9 we have versions from v2.9.0 till v2.9.13, and anisble has been fixing bugs between all release v2.9.0 and v2.9.13. So v2.9.13 is stable and has fewer bugs than v2.10.1 forexample.
+Another reason is that between version v2.9 and v2.10, there is a big difference, but playbooks from v2.9 can execute in v2.10
 
+### Ansible Documentation
+https://docs.ansible.com
+In ansible docs, you can also choose the documentation based on the ansible version you are using.
