@@ -1,5 +1,6 @@
 # -*- mode: ruby -*-
 # vi: set ft=ruby :
+# This file can be used to setup Linux local virtual machines.
 
 Vagrant.require_version ">= 1.6.0"
 
