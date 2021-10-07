@@ -86,3 +86,14 @@ Another reason is that between version v2.9 and v2.10, there is a big difference
 ### Ansible Documentation
 https://docs.ansible.com
 In ansible docs, you can also choose the documentation based on the ansible version you are using.
+
+### .ansible.cfg
+Please create one .ansible.cfg file in your home directory  (~/)
+Both in WSL and Mac terminal, just use cd ~ go to your home directory
+$ cd ~
+$ ls -la | grep ansible
+-rw-r--r--   1 pengxiao  staff      62 Sep 23 23:29 .ansible.cfg
+and create a file called .ansible.cfg with content as below
+[defaults]
+host_key_checking=False
+deprecation_warnings=False
