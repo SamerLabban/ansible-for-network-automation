@@ -1,12 +1,17 @@
+# Set up nginx is a play which has several tasks under it
 - name: set up nginx
   hosts: web
   # gather_facts: no
   tasks:
+    # print the content of ansible_facts that gets executed by default.
     - name: print out the facts
       debug:
         var: ansible_facts
     - name: install epel-release
+      # become: yes --> ths key:value means execute the sudo privelage to execute the yum command below.
       become: yes
+      # yum module documentation:
+      # https://docs.ansible.com/ansible/2.3/yum_module.html
       yum:
         name: epel-release
         state: present
@@ -15,6 +20,10 @@
       yum:
         name: nginx
         state: present
+    # If we install "epel-release" and "nginx" under same task, we'll get an error. So splitting them as above is a workaround.
+    # - name:
+    #     - epel-release
+    #     - nginx   
     - name: copy index.html
       become: yes
       copy:
@@ -25,6 +34,7 @@
       service:
         name: nginx
         state: started
+    # Create sustom fact
     # - name: create fact
     #   set_fact:
     #     my_vars:

@@ -62,4 +62,15 @@ csr1.gitlab-demo.com ansible_user=cisco ansible_password=....
 After that use, the ansible command to execute "show run" command on the router.
 ```
 ansible -i hosts csr100v -m raw -a "show run"
+ansible -i hosts csr100v -m raw -a "show version"
+ansible -i hosts csr100v -m raw -a "show interface"
+ansible -i hosts csr100v -m raw -a "show ip interface"
+ansible -i hosts csr100v -m raw -a "show ip interface brief"
 ```
+
+### Limitation of Ansible ad-hock task
+https://docs.ansible.com/ansible/latest/user_guide/intro_adhoc.html <br/>
+Ad hoc commands are useful to execute certain commands in one line, such as rebooting many servers.
+
+Limitations: <br/>
+You can only execute one single command. This is ok for simple cases, but not for more complexe tasks, such as if we want to setup an environment to deploy our application - We need to do some preparations, install certain softwares, change some comfigurations, restart some services... So in this case we need to combine multiple tasks with logic into one single file or project, so we use an Ansible Playbook.
