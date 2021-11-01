@@ -4,8 +4,10 @@
   become: yes
   tasks:
     - name: print the facts
+      # We use the ansible_facts command to check what distribution of linux we are running. We did not print all facts, we just print ["distribution"]
       debug:
         var: ansible_facts["distribution"]
     - name: "check yum version"
       command: yum --version
+      # condition check to check the ansible_facts["distribution"]
       when: ansible_facts["distribution"] == "CentOS"

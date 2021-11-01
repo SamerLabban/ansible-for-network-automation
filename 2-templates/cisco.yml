@@ -1,6 +1,7 @@
 ---
 - hosts: web
   gather_facts: no
+  # Define variables
   vars:
     interface_counter: 10
     enable_bgp: yes

@@ -11,5 +11,6 @@
         - test2
         - test3
         - test4
+      # We use the following to change the default variable name from "item" to another name (example "username")
       loop_control:
         loop_var: username

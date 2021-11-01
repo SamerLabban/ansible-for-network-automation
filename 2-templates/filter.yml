@@ -24,18 +24,24 @@
         msg: "{{ myname | capitalize }}"
     - name: test2
       debug:
+        # below unique filter will remove the duplicates in the mylist list, so it'll remove the "3"
         msg: "{{ mylist | unique | sort}}"
     - name: test3
       debug:
+        # If you get an error when running ipaddr filter, run the following command on your machine: pip install netaddr
+        # The ipaddr will verify if the ip address is a valid ip and will print the valid ips only. So it won't print invalid ip 300.0.0.1
         msg: "{{ iplist | ipaddr }}"
     - name: test4
       debug:
+        # below filter will print the prfeix with the ip, example: 192.0.2.0/24
         msg: "{{ networklist | ipaddr('network/prefix') }}"
     - name: test5
       debug:
+        # Note: The filter won't change the value of the variable itself. To see that, do:
         msg: "{{ myname }}"
-    - name: test6
+    - name: test6      
       set_fact:
+        # if you want the value after filtering, create another variable and store the filtered variable in it. For that use the set_fact module.
         my_newname: "{{ myname | capitalize }}"
     - name: test7
       debug:
